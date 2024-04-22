@@ -1,2 +1,1 @@
-# iRidi_IR
-Contains examples for working with IR protocol using iRidi products
+###Contains examples, Docs, e.t.c.
