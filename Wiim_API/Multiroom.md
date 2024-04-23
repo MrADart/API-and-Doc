@@ -129,6 +129,7 @@ Allows you to adjust the volume of each Guest Device in a group. The request mus
 Mute a specific Slave Device of a Multiroom group.
 
 **HTTP Method:** GET **Endpoint:** `/httpapi.asp?command=multiroom:SlaveMute:<ip_address>:<flag_mute>`
+
 `command`: multiroom:SlaveVolume
 
  **Parameters:** 
@@ -139,6 +140,40 @@ Mute a specific Slave Device of a Multiroom group.
 | `flag_mute`  | The desired mute status                                         |
 |              | `0`: Unmuted                                                    |
 |              | `1`: Muted                                                      |
+
+**Response:**
+
+200 OK
+
+### Set the Audio Channel (Left/Right/Stereo) for a Slave Device
+
+This command will set the audio channel for a Guest Devive in a Multiroom group.
+
+**HTTP Method:** GET **Endpoint:** `/httpapi.asp?command=multiroom:SlaveChannel:<ip_address>:<flag_channel>`
+
+`command`: multiroom:SlaveChannel
+
+ **Parameters:** 
+
+| Key          | Value-Description |
+|--------------|-------------------|
+| `ip_address` | The IP address of the Guest Device to control with this command |
+| `flag_channel` | The channel that has to be switched |
+|              | `0` - Stereo (both channels are on) |
+|              | `1` - Left channel is on |
+|              | `2` - Right channel is on |
+
+**Response:**
+
+200 OK
+
+### Disable Multiroom Mode
+
+This command disables Multiroom mode on the Host Device, and will split up the entire group. All devices are returned to stand alone mode.
+
+**HTTP Method:** GET **Endpoint:** `/httpapi.asp?command=multiroom:Ungroup`
+
+`command`: multiroom:Ungroup
 
 **Response:**
 
