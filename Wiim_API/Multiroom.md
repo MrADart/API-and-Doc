@@ -155,13 +155,13 @@ This command will set the audio channel for a Guest Devive in a Multiroom group.
 
  **Parameters:** 
 
-| Key          | Value-Description |
-|--------------|-------------------|
-| `ip_address` | The IP address of the Guest Device to control with this command |
-| `flag_channel` | The channel that has to be switched |
-|              | `0` - Stereo (both channels are on) |
-|              | `1` - Left channel is on |
-|              | `2` - Right channel is on |
+| Key            | Value-Description                                               |
+| -------------- | --------------------------------------------------------------- |
+| `ip_address`   | The IP address of the Guest Device to control with this command |
+| `flag_channel` | The channel that has to be switched                             |
+|                | `0` - Stereo (both channels are on)                             |
+|                | `1` - Left channel is on                                        |
+|                | `2` - Right channel is on                                       |
 
 **Response:**
 
