@@ -121,7 +121,7 @@ Retrieves detailed informations about a connected device.
 
 **Value-Description**
 
-| Key                                                        | Value Description                                                                                                 |
+| Key                                                        | Value-Description                                                                                                 |
 | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
 | uuid                                                       | Device permanent UUID (will remain after device reboot)                                                           |
 | DeviceName                                                 | The device UPnP and Airplay friendly name                                                                         |
@@ -225,6 +225,7 @@ Retrieves detailed informations about a connected device.
 | security_version                                           | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
 
 ### Device connection status
+
 This command will return the status of the WiFi connection. The possible return values are as follows.
 
 **HTTP Method:** GET **Endpoint:** `/httpapi.asp?command=wlanGetConnectState`
@@ -239,13 +240,12 @@ FAIL
 
 **Value-Description**
 
-| Key        | Value Description |
-|------------|-------------------|
-| `PROCESS`  | Connection still in progress. |
-| `PAIRFAIL` | WiFi connection attempt failed. Wrong password given. |
+| Key        | Value-Description                                                                                                |
+| ---------- | ---------------------------------------------------------------------------------------------------------------- |
+| `PROCESS`  | Connection still in progress.                                                                                    |
+| `PAIRFAIL` | WiFi connection attempt failed. Wrong password given.                                                            |
 | `FAIL`     | WiFi connection attempt failed. Also this will be the reply for a device that is connected by LAN Ethernet port. |
-| `OK`       | Device is connected. |
-
+| `OK`       | Device is connected.                                                                                             |
 
 ### Get list of scanned AP's
 
@@ -284,19 +284,18 @@ Retrieves a list of nearby scanned WiFi Access Points and reports some of the ma
 
 **Description of Response Values**
 
-| Key     | Value Description |
-|---------|-------------------|
-| `res`   | Number of SSID's found |
-| `aplist`| The key to get the list of scanned Access Points |
-
+| Key      | Value-Description                                |
+| -------- | ------------------------------------------------ |
+| `res`    | Number of SSID's found                           |
+| `aplist` | The key to get the list of scanned Access Points |
 
 **Description of an AP Response Object**
 
-| Key     | Value Description |
-|---------|-------------------|
-| `auth`  | Required WiFi authorization mechanism |
-| `bssid` | The MAC address of that WiFi |
-| `channel`| Used WiFi channel |
-| `extch` | !! DOCUMENTATION IN PROGRESS !! |
-| `rssi`  | RSSI (Received Signal Strength Indication) value<br>Value range is from 0 - 100.<br>100 means best signal strength. |
-| `ssid`  | The SSID of that WiFi network<br>[hexed string] |
+| Key       | Value Description                                                                                                   |
+| --------- | ------------------------------------------------------------------------------------------------------------------- |
+| `auth`    | Required WiFi authorization mechanism                                                                               |
+| `bssid`   | The MAC address of that WiFi                                                                                        |
+| `channel` | Used WiFi channel                                                                                                   |
+| `extch`   | !! DOCUMENTATION IN PROGRESS !!                                                                                     |
+| `rssi`    | RSSI (Received Signal Strength Indication) value<br>Value range is from 0 - 100.<br>100 means best signal strength. |
+| `ssid`    | The SSID of that WiFi network<br>[hexed string]                                                                     |

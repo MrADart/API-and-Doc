@@ -6,7 +6,7 @@ This document describes the HTTP API for controlling Wiim audio devices. The API
 
 ## Base URL
 
-Replace `{your-wiim-device-ip}` with the actual IP address of your Wiim device.
+Replace `{your-wiim-device-ip}` with the actual IP address of your WiiM device.
 
 https://{your-wiim-device-ip}/
 
@@ -21,8 +21,6 @@ All requests must be sent over HTTPS and require TLS 1.2 for secure communicatio
 ```html
  GET http://192.168.10.1/httpapi.asp?command={command}
 ```
-
-Arylic's `Axx` modules are SoC modules for WiFi Audio solutions, which supports Smartlink, DLNA, Spotify Connect and Airplay. They also provide support for an `HTTP` API to get quick access.
 
 To communicate with a board you have to send `HTTP GET` requests.  
 The response is in `JSON` format.
