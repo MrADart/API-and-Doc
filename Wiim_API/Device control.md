@@ -121,108 +121,103 @@ Retrieves detailed informations about a connected device.
 
 **Value-Description**
 
-| Key                                                        | Value-Description                                                                                                 |
-| ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| uuid                                                       | Device permanent UUID (will remain after device reboot)                                                           |
-| DeviceName                                                 | The device UPnP and Airplay friendly name                                                                         |
-| GroupName                                                  | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
-| ssid                                                       | Device's own SSID when in WiFi pairing mode or when device's WiFi hotspot is active                               |
-| language                                                   | The language                                                                                                      |
-| firmware                                                   | Current firmware version                                                                                          |
-| hardware                                                   | Hardware model                                                                                                    |
-| build                                                      | Possible values: release, debug, backup                                                                           |
-| release: this is a release version                         | debug: this is a debug version                                                                                    |
-| backup: this is a backup version                           | project                                                                                                           |
-| priv_prj                                                   | Project name which would stand for a specific board                                                               |
-| project_build_name                                         | Code identifier for customized release                                                                            |
-| Release                                                    | Firmware build date                                                                                               |
-| Format: YYYYMMDD                                           | temp_uuid                                                                                                         |
-| hideSSID                                                   | When the device is operating as a WiFi hotspot, this flag determines whether its SSID should be hidden or visible |
-| 0: ssid is visible                                         | 1: ssid is hidden                                                                                                 |
-| SSIDStrategy                                               | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
-| branch                                                     | Code branch                                                                                                       |
-| group                                                      | Wether the device is working slave mode, 0 means master or standalone.                                            |
-| master_uuid                                                | Exist when working in slave mode, showing the UUID of master device.                                              |
-| slave_mask                                                 | Exist when working in slave mode, showing if the device support mask feature. 0 means not supported.              |
-| wmrm_version                                               | Multiroom library version, the latest version 4.2 is not compatible with 2.0.                                     |
-| internet                                                   | Current status of internet access:                                                                                |
-| 0: not ready                                               | 1: ready                                                                                                          |
-| MAC                                                        | MAC address of the device when working in hotspot mode, will show on APP and also the sticker on module/device.   |
-| STA_MAC                                                    | MAC address of the STA = STATION                                                                                  |
-| CountryCode                                                | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
-| CountryRegion                                              | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
-| netstat                                                    | WiFi connect state:                                                                                               |
-| 0: no connection                                           | 1: connecting                                                                                                     |
-| 2: connected                                               | essid                                                                                                             |
-| [hexed string]                                             | apcli0                                                                                                            |
-| eth2                                                       | Device's IP address when it's connected to ethernet                                                               |
-| ra0                                                        | WiFi AP IP address, normally it is 10.10.10.254                                                                   |
-| eth_dhcp                                                   | Flag for DHCP or Static IP Address                                                                                |
-| 0: Static IP                                               | 1: IP Address provided by LAN/WLAN DHCP Server                                                                    |
-| eth_static_ip                                              | Device's Static IP address (If eth_dhcp=0)                                                                        |
-| eth_static_mask                                            | Device's Network Mask (If eth_dhcp=0)                                                                             |
-| eth_static_gateway                                         | Device's IP Gateway (If eth_dhcp=0)                                                                               |
-| eth_static_dns1                                            | Device's Primary DNS Server (If eth_dhcp=0)                                                                       |
-| eth_static_dns2                                            | Device's Secondary DNS Server (If eth_dhcp=0)                                                                     |
-| VersionUpdate                                              | Flag that determines, if there is a new firmware version available or not.                                        |
-| 0: no new firmware                                         | 1: new firmware available                                                                                         |
-| NewVer                                                     | If there is a new firmware available (in case of VersionUpdate is set to 1), this is the new version number       |
-| mcu_ver                                                    | Version of MCU on base board                                                                                      |
-| mcu_ver_new                                                | New version of MCU on base board, indicates if there is a newer version of MCU available                          |
-| 0 - No new version                                         | others - New version                                                                                              |
-| dsp_ver                                                    | Version for voice processing, not used                                                                            |
-| dsp_ver_new                                                | New version for voice processing, not used                                                                        |
-| date                                                       | Current Date                                                                                                      |
-| time                                                       | Current local time                                                                                                |
-| tz                                                         | Offset of timezone                                                                                                |
-| dst_enable                                                 | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
-| region                                                     | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
-| prompt_status                                              | Indicates if the prompting voice would be played or not, you can set with command PromptEnable and PromptDisable. |
-| 0 - No prompting voice                                     | 1 - Have prompting voice                                                                                          |
-| iot_ver                                                    | IOT library version, not used                                                                                     |
-| upnp_version                                               | UPnP Device Architecture Version                                                                                  |
-| cap1                                                       | Bit mask for the module feature, used internally                                                                  |
-| capability                                                 | Bit mask for the module feature, used internally                                                                  |
-| languages                                                  | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
-| streams_all                                                | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
-| streams                                                    | This is a bit mask:                                                                                               |
-| 0: If Airplay is enabled                                   | 1: If DLNA is enabled                                                                                             |
-| 2: Has TTPod support                                       | 3: Has TuneIn support                                                                                             |
-| 4: Has Pandora support                                     | 5: Has DoubanFM support                                                                                           |
-| !! DOCUMENTATION IN PROGRESS !!*                           | external                                                                                                          |
-| !! DOCUMENTATION IN PROGRESS !!                            | plm_support                                                                                                       |
-| bit1: LineIn (Aux support)                                 | bit2: Bluetooth support                                                                                           |
-| bit3: USB support                                          | bit4: Optical support                                                                                             |
-| bit6: Coaxial support                                      | bit8: LineIn 2 support                                                                                            |
-| bit15: USBDAC support                                      | Others are reserved or not used.                                                                                  |
-| preset_key                                                 | Quantity of presets available:                                                                                    |
-| spotify_active                                             | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
-| But I guess:                                               | Flag that indicates if Spotify is currently playing on the device (via Spotify Connect?)                          |
-| 0: Spotify is not playing                                  | 1: Spotify is playing                                                                                             |
-| lbc_support                                                | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
-| privacy_mode                                               | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
-| WifiChannel                                                | The current connected WiFi channel                                                                                |
-| RSSI                                                       | RSSI Level of used WiFi                                                                                           |
-| Value ranges from 0 - 100. 100 means best signal strength. | BSSID                                                                                                             |
-| battery                                                    | 0: battery is not charging                                                                                        |
-| 1: battery is charging                                     | battery_percent                                                                                                   |
-| Value ranges from 0 - 100                                  | securemode                                                                                                        |
-| auth                                                       | Type of WiFi Protected Access used (Authentication Key).                                                          |
-| encry                                                      | Type of WiFi Protected Access used (Encryption Protocol).                                                         |
-| upnp_uuid                                                  | The UPnP UUID                                                                                                     |
-| uart_pass_port                                             | Port used for TCP/IP Communcations/Socket Connections                                                             |
-| communication_port                                         | TCP port for internal messages                                                                                    |
-| web_firmware_update_hide                                   | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
-| ignore_talkstart                                           | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
-| silenceOTATime                                             | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
-| ignore_silenceOTATime                                      | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
-| new_tunein_preset_and_alarm                                | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
-| iheartradio_new                                            | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
-| new_iheart_podcast                                         | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
-| tidal_version                                              | TIDAL API version                                                                                                 |
-| service_version                                            | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
-| security                                                   | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
-| security_version                                           | !! DOCUMENTATION IN PROGRESS !!                                                                                   |
+| Key                                                        | Value-Description                                                                                                                                                 |
+| ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| uuid                                                       | Device permanent UUID (will remain after device reboot)                                                                                                           |
+| DeviceName                                                 | The device UPnP and Airplay friendly name                                                                                                                         |
+| GroupName                                                  | The name of the group to which the device belongs                                                                                                                 |
+| ssid                                                       | Device's own SSID when in WiFi pairing mode or when device's WiFi hotspot is active                                                                               |
+| language                                                   | The language                                                                                                                                                      |
+| firmware                                                   | Current firmware version                                                                                                                                          |
+| hardware                                                   | Hardware model                                                                                                                                                    |
+| build                                                      | Possible values: release, debug, backup                                                                                                                           |
+| release: this is a release version                         | debug: this is a debug version                                                                                                                                    |
+| backup: this is a backup version                           | project                                                                                                                                                           |
+| priv_prj                                                   | Project name which would stand for a specific board                                                                                                               |
+| project_build_name                                         | Code identifier for customized release                                                                                                                            |
+| Release                                                    | Firmware build date                                                                                                                                               |
+| Format: YYYYMMDD                                           | temp_uuid                                                                                                                                                         |
+| hideSSID                                                   | When the device is operating as a WiFi hotspot, this flag determines whether its SSID should be hidden or visible                                                 |
+| 0: ssid is visible                                         | 1: ssid is hidden                                                                                                                                                 |
+| SSIDStrategy                                               | !! DOCUMENTATION IN PROGRESS !!                                                                                                                                   |
+| branch                                                     | Code branch                                                                                                                                                       |
+| group                                                      | Wether the device is working slave mode, 0 means master or standalone.                                                                                            |
+| master_uuid                                                | Exist when working in slave mode, showing the UUID of master device.                                                                                              |
+| slave_mask                                                 | Exist when working in slave mode, showing if the device support mask feature. 0 means not supported.                                                              |
+| wmrm_version                                               | Multiroom library version, the latest version 4.2 is not compatible with 2.0.                                                                                     |
+| internet                                                   | Current status of internet access:                                                                                                                                |
+| 0: not ready                                               | 1: ready                                                                                                                                                          |
+| MAC                                                        | MAC address of the device when working in hotspot mode, will show on APP and also the sticker on module/device.                                                   |
+| STA_MAC                                                    | MAC address of the STA = STATION                                                                                                                                  |
+| CountryCode                                                | !! DOCUMENTATION IN PROGRESS !!                                                                                                                                   |
+| CountryRegion                                              | !! DOCUMENTATION IN PROGRESS !!                                                                                                                                   |
+| netstat                                                    | WiFi connect state:                                                                                                                                               |
+| 0: no connection                                           | 1: connecting                                                                                                                                                     |
+| 2: connected                                               | essid                                                                                                                                                             |
+| [hexed string]                                             | apcli0                                                                                                                                                            |
+| eth2                                                       | Device's IP address when it's connected to ethernet                                                                                                               |
+| ra0                                                        | WiFi AP IP address, normally it is 10.10.10.254                                                                                                                   |
+| eth_dhcp                                                   | Flag for DHCP or Static IP Address                                                                                                                                |
+| 0: Static IP                                               | 1: IP Address provided by LAN/WLAN DHCP Server                                                                                                                    |
+| eth_static_ip                                              | Device's Static IP address (If eth_dhcp=0)                                                                                                                        |
+| eth_static_mask                                            | Device's Network Mask (If eth_dhcp=0)                                                                                                                             |
+| eth_static_gateway                                         | Device's IP Gateway (If eth_dhcp=0)                                                                                                                               |
+| eth_static_dns1                                            | Device's Primary DNS Server (If eth_dhcp=0)                                                                                                                       |
+| eth_static_dns2                                            | Device's Secondary DNS Server (If eth_dhcp=0)                                                                                                                     |
+| VersionUpdate                                              | Flag that determines, if there is a new firmware version available or not.                                                                                        |
+| 0: no new firmware                                         | 1: new firmware available                                                                                                                                         |
+| NewVer                                                     | If there is a new firmware available (in case of VersionUpdate is set to 1), this is the new version number                                                       |
+| mcu_ver                                                    | Version of MCU on base board                                                                                                                                      |
+| mcu_ver_new                                                | New version of MCU on base board, indicates if there is a newer version of MCU available                                                                          |
+| 0 - No new version                                         | others - New version                                                                                                                                              |
+| dsp_ver                                                    | Version for voice processing, not used                                                                                                                            |
+| dsp_ver_new                                                | New version for voice processing, not used                                                                                                                        |
+| date                                                       | Current Date                                                                                                                                                      |
+| time                                                       | Current local time                                                                                                                                                |
+| tz                                                         | Offset of timezone                                                                                                                                                |
+| dst_enable                                                 | !! DOCUMENTATION IN PROGRESS !!                                                                                                                                   |
+| region                                                     | !! DOCUMENTATION IN PROGRESS !!                                                                                                                                   |
+| prompt_status                                              | Indicates if the prompting voice would be played or not, you can set with command PromptEnable and PromptDisable.                                                 |
+| 0 - No prompting voice                                     | 1 - Have prompting voice                                                                                                                                          |
+| iot_ver                                                    | IOT library version, not used                                                                                                                                     |
+| upnp_version                                               | UPnP Device Architecture Version                                                                                                                                  |
+| cap1                                                       | Bit mask for the module feature, used internally                                                                                                                  |
+| capability                                                 | Bit mask for the module feature, used internally                                                                                                                  |
+| languages                                                  | !! DOCUMENTATION IN PROGRESS !!                                                                                                                                   |
+| streams_all                                                | !! DOCUMENTATION IN PROGRESS !!                                                                                                                                   |
+| streams                                                    | This is a bit mask: 0: If Airplay is enabled; 1: If DLNA is enabled; 2: Has TTPod support; 3: Has TuneIn support; 4: Has Pandora support; 5: Has DoubanFM support |
+| bit1: LineIn (Aux support)                                 | bit2: Bluetooth support                                                                                                                                           |
+| bit3: USB support                                          | bit4: Optical support                                                                                                                                             |
+| bit6: Coaxial support                                      | bit8: LineIn 2 support                                                                                                                                            |
+| bit15: USBDAC support                                      | Others are reserved or not used.                                                                                                                                  |
+| preset_key                                                 | Quantity of presets available:                                                                                                                                    |
+| spotify_active                                             | !! DOCUMENTATION IN PROGRESS !!                                                                                                                                   |
+| But I guess:                                               | Flag that indicates if Spotify is currently playing on the device (via Spotify Connect?)                                                                          |
+| 0: Spotify is not playing                                  | 1: Spotify is playing                                                                                                                                             |
+| lbc_support                                                | !! DOCUMENTATION IN PROGRESS !!                                                                                                                                   |
+| privacy_mode                                               | !! DOCUMENTATION IN PROGRESS !!                                                                                                                                   |
+| WifiChannel                                                | The current connected WiFi channel                                                                                                                                |
+| RSSI                                                       | RSSI Level of used WiFi                                                                                                                                           |
+| Value ranges from 0 - 100. 100 means best signal strength. | BSSID                                                                                                                                                             |
+| battery                                                    | 0: battery is not charging                                                                                                                                        |
+| 1: battery is charging                                     | battery_percent                                                                                                                                                   |
+| Value ranges from 0 - 100                                  | securemode                                                                                                                                                        |
+| auth                                                       | Type of WiFi Protected Access used (Authentication Key).                                                                                                          |
+| encry                                                      | Type of WiFi Protected Access used (Encryption Protocol).                                                                                                         |
+| upnp_uuid                                                  | The UPnP UUID                                                                                                                                                     |
+| uart_pass_port                                             | Port used for TCP/IP Communcations/Socket Connections                                                                                                             |
+| communication_port                                         | TCP port for internal messages                                                                                                                                    |
+| web_firmware_update_hide                                   | !! DOCUMENTATION IN PROGRESS !!                                                                                                                                   |
+| ignore_talkstart                                           | !! DOCUMENTATION IN PROGRESS !!                                                                                                                                   |
+| silenceOTATime                                             | !! DOCUMENTATION IN PROGRESS !!                                                                                                                                   |
+| ignore_silenceOTATime                                      | !! DOCUMENTATION IN PROGRESS !!                                                                                                                                   |
+| new_tunein_preset_and_alarm                                | !! DOCUMENTATION IN PROGRESS !!                                                                                                                                   |
+| iheartradio_new                                            | !! DOCUMENTATION IN PROGRESS !!                                                                                                                                   |
+| new_iheart_podcast                                         | !! DOCUMENTATION IN PROGRESS !!                                                                                                                                   |
+| tidal_version                                              | TIDAL API version                                                                                                                                                 |
+| service_version                                            | !! DOCUMENTATION IN PROGRESS !!                                                                                                                                   |
+| security                                                   | !! DOCUMENTATION IN PROGRESS !!                                                                                                                                   |
+| security_version                                           | !! DOCUMENTATION IN PROGRESS !!                                                                                                                                   |
 
 ### Device connection status
 

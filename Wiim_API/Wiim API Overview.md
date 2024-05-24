@@ -33,7 +33,7 @@ All response examples in this documentation are from different devices (<strong>
 
 For all requests, the following keys are mandatory:
 
-| Key           | Value             |
-|---------------|-------------------|
-| `Accept`      | `application/json`|
-| `Content-Type`| `application/json`|
+| Key            | Value              |
+| -------------- | ------------------ |
+| `Accept`       | `application/json` |
+| `Content-Type` | `application/json` |
