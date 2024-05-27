@@ -222,7 +222,7 @@ Play Instruction for one of the Programmable Presets (maximum 12)
 
 **HTTP Method:** GET **Endpoint:** `/httpapi.asp?command=MCUKeyShortClick:<num_value>`
 
-`command`: setPlayerCmd:mute
+`command`: MCUKeyShortClick:<num_value>
 
 **Parameters:**
 
